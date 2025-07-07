@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  font-family: 'Fjalla One', sans-serif;
+  text-align: center;
+  background: linear-gradient(to bottom, #fdfd48, #fdbf6d); /* gradiente amarelo para laranja */
+}
+
+.container {
+  padding: 40px 20px;
+}
+
+.logo {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: red;
+  margin-bottom: 5px;
+}
+
+.subtitulo {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.social-icons img {
+  width: 40px;
+}
+
+.link-button {
+  display: flex;
+  justify-content: center;
+  margin: 15px auto;
+}
+
+.link-button a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  max-width: 400px;
+  padding: 12px 20px;
+  background-color: #eee;
+  border: 2px solid red;
+  border-radius: 25px;
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 6px 0 red;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon-circle {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; /* ou a cor desejada */
+  overflow: hidden;
+}
+
+/* Ícones em tamanhos escaláveis */
+.icon-20 {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-30 {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-40 {
+  width: 40px;
+  height: 40px;
+}
+
+.icon-50 {
+  width: 50px;
+  height: 50px;
+}
+
+/* A imagem se adapta ao tamanho do círculo */
+.icon-circle img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+
+.btn-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot-menu {
+  margin-left: auto;
+  font-size: 0px;
+}
+
+.link-button a:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 0 red;
+}
+
+
