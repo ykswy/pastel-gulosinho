@@ -10,7 +10,7 @@ body {
 }
 
 .logo {
-  width: 100px;
+  width: 155px;
   border-radius: 50%;
   margin-bottom: 10px;
 }
@@ -115,4 +115,15 @@ h1 {
   box-shadow: 0 8px 0 red;
 }
 
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: red;
+  padding: 20px 0;
+  background-color: transparent; /* ou #fff / #f8f8f8 */
+}
 
+.dev-name {
+  color: #f3023eec; /* azul, por exemplo */
+  font-weight: bold;
+}
