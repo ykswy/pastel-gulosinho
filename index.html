@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pastel e Caldo de Cana Gulosinho</title>
+  <title>Canto do Sabor e Pastel Gulosinho</title>
    <!-- Open Graph para Facebook, WhatsApp, etc -->
-<meta property="og:title" content="Pastel e Caldo de Cana Gulosinho 🌮 - Faça seu pedido" />
-<meta property="og:description" content="O melhor pastel de Manaus com aquele caldo de cana geladinho!" />
+<meta property="og:title" content="Pastel e Caldo de Cana Gulosinho 🌮 - Faça seu pedido hoje mesmo!" />
+<meta property="og:description" content="O melhor pastel de Manaus com aquele caldo de cana geladinho! Faça seu pedido agora pelo WhatsApp ou acesse nosso catálogo." />
 <meta property="og:image" content="https://raw.githubusercontent.com/ykswy/pastel-gulosinho/refs/heads/main/imagens/WhatsApp_Image_2025-06-10_at_12.59.28-removebg-preview.png" />
 <meta property="og:url" content="https://ykswy.github.io/pastel-gulosinho/" />
 <meta property="og:type" content="website" />
@@ -17,22 +17,26 @@
 <meta name="twitter:description" content="Oferecemos brinquedos incríveis para aluguel com condições especiais. Veja mais!" />
 <meta name="twitter:image" content="https://raw.githubusercontent.com/ykswy/pastel-gulosinho/refs/heads/main/imagens/WhatsApp_Image_2025-06-10_at_12.59.28-removebg-preview.png" />
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <img src="imagens/WhatsApp_Image_2025-06-10_at_12.59.28-removebg-preview.png" alt="Senhor Pastel" class="logo">
+    <div class="logo-container">
+  <img src="imagens/WhatsApp_Image_2025-06-10_at_12.59.28-removebg-preview.png" alt="Pastel Gulosinho" class="logo">
+  <img src="imagens/logo-canto-do-sabor.png" alt="Outra Logo" class="logo outra-logo">
+</div>
 
-    <h1>Pastel e Caldo de Cana Gulosinho</h1>
+
+    <h1>Canto do Sabor e Pastel Gulosinho</h1>
     <p class="subtitulo">O Melhor Pastel de Manaus é aqui!<br>Faça seu pedido em um dos links abaixo:</p>
 
-    <div class="social-icons">
-      <a href="#" target="_blank"><img src="imagens/instagram (1).png" alt="Instagram" /></a>
-      <a href="#" target="_blank"><img src="imagens/whatsapp.png" alt="WhatsApp" /></a>
-    </div>
+    <div id="status-funcionamento" class="status-box">
+  <!-- Preenchido via JavaScript -->
+</div>
 
    <div class="link-button">
-  <a href=" https://wa.me/c/559292694198" target="_blank">
+  <a href="https://wa.me/message/IU4VH6JXFWQ5K1" target="_blank">
     <span class="icon-circle icon-50">
   <img src="imagens/whatsapp.png" alt="WhatsApp">
 </span>
@@ -42,7 +46,27 @@
 </div>
 
 <div class="link-button">
-  <a href="#" target="_blank">
+  <a href="https://www.instagram.com/pastelecaldodecanagulosinho" target="_blank">
+    <span class="icon-circle icon-50">
+  <img src="imagens/instagram (1).png" alt="Instagram">
+</span>
+    <span class="btn-text">Pastel Gulosinho</span>
+    <span class="dot-menu">⋯</span>
+  </a>
+</div>
+
+<div class="link-button">
+  <a href="https://www.instagram.com/cantodosabor_20" target="_blank">
+    <span class="icon-circle icon-50">
+  <img src="imagens/instagram (1).png" alt="Instagram">
+</span>
+    <span class="btn-text">Canto do Sabor</span>
+    <span class="dot-menu">⋯</span>
+  </a>
+</div>
+
+<div class="link-button">
+  <a href="https://wa.me/message/IU4VH6JXFWQ5K1" target="_blank">
     <span class="icon-circle icon-50">
   <img src="imagens/facebook.png" alt="WhatsApp">
 </span>
@@ -50,17 +74,6 @@
     <span class="dot-menu">⋯</span>
   </a>
 </div>
-
-    <div class="link-button">
-  <a href="https://www.instagram.com/pastelecaldodecanagulosinho" target="_blank">
-    <span class="icon-circle icon-50">
-  <img src="imagens/instagram (1).png" alt="Instagram">
-</span>
-    <span class="btn-text">Nosso Instagram</span>
-    <span class="dot-menu">⋯</span>
-  </a>
-</div>
-
 
     <div class="link-button">
   <a href="https://maps.app.goo.gl/rQer2zrHmaCcZRjF6" target="_blank">
@@ -76,6 +89,42 @@
   © 2025 Pastel Gulosinho. Todos os direitos reservados.<br>
   By <span class="dev-name">Liich</span>.
 </footer>
+
+<script>
+  const statusBox = document.getElementById("status-funcionamento");
+  const now = new Date();
+  const hour = now.getHours();
+  const minute = now.getMinutes();
+  const day = now.getDay();
+
+
+  let title = "";
+  let desc = "";
+  let cssClass = "";
+
+  // Função para verificar se está dentro do horário de funcionamento
+  const isOpen = hour > 18 || (hour === 18 && minute >= 0);
+  const isClosed = hour >= 23 || hour < 18;
+
+  if (isClosed) {
+    title = "⚠️ Estamos fechados no momento";
+    desc = "Nosso atendimento é das 18h às 23h. Volte mais tarde!";
+    cssClass = "status-fechado";
+  } else if (day === 0) {
+    title = "🌮 Domingo de Pastel!";
+    desc = "Hoje temos apenas a pastelaria, com delivery até 23h ✅!";
+    cssClass = "status-pastel";
+  } else if (day >= 1 && day <= 6) {
+    title = "🟢 Estamos abertos!";
+    desc = "Espetaria e pastelaria disponíveis das 18h às 23h — com delivery ✅";
+    cssClass = "status-open";
+  }
+
+  if (cssClass) {
+    statusBox.classList.add(cssClass);
+    statusBox.innerHTML = `<div>${title}</div><div>${desc}</div>`;
+  }
+</script>
 
 </body>
 </html>
