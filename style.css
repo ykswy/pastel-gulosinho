@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Fjalla One', sans-serif;
+  font-family: 'Poppins';
   text-align: center;
   background: linear-gradient(to bottom, #fdfd48, #fdbf6d); /* gradiente amarelo para laranja */
 }
@@ -10,15 +10,15 @@ body {
 }
 
 .logo {
-  width: 155px;
+  width: 184px;
   border-radius: 50%;
   margin-bottom: 10px;
 }
 
 h1 {
-  color: red;
-  margin-bottom: 5px;
+  font-family: "Roboto", sans-serif;
 }
+
 
 .subtitulo {
   color: red;
@@ -60,6 +60,7 @@ h1 {
   box-shadow: 0 6px 0 red;
   transition: all 0.2s ease-in-out;
 }
+
 
 .icon-circle {
   border-radius: 50%;
@@ -124,6 +125,88 @@ h1 {
 }
 
 .dev-name {
-  color: #f3023eec; /* azul, por exemplo */
+  color: #ff0543; /* azul, por exemplo */
   font-weight: bold;
+}
+
+/* função dos indicadores de aberto e fechado */
+
+.status-box {
+  animation: pulseBox 3s ease-in-out infinite;
+  margin: 30px auto;
+  padding: 25px 30px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  max-width: 90%;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  border-left: 8px solid white;
+  transition: all 0.3s ease;
+
+}
+
+/* brilho sutil passando */
+.status-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.05), rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+  animation: shimmer 3.5s infinite linear;
+  z-index: 0;
+}
+
+.status-box > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* título com tamanho e espaçamento */
+.status-box div:first-child {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* status específicos */
+.status-open {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  border-left-color: #ffffff;
+}
+
+.status-pastel {
+  background: linear-gradient(135deg, #f39c12, #f1c40f);
+  border-left-color: #ffffff;
+  color: #222;
+}
+
+.status-fechado {
+  background: linear-gradient(135deg, #c94a3b, #ff1900);
+  border-left-color: #ffffff;
+}
+
+/* brilho animado */
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+
+/* Animação de pulsação dos indicadores de aberto e fehado*/
+@keyframes pulseBox {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.015);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  }
 }
